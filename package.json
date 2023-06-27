@@ -1,6 +1,6 @@
 {
   "name": "reparadtum-bot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The bot for ReparadTUM",
   "main": "dist/main.js",
   "type": "module",

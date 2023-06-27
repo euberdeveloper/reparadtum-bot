@@ -86,8 +86,8 @@ ${commandsText}`;
         this.bot.use(stage.middleware() as any);
 
         this.bot.start(async ctx => {
-            logger.debug('Start command', ctx.chat);
-            const chatType = this.checkIsAdmin((ctx.chat as any).username) ? ChatType.MEMBER : ChatType.USER;
+            logger.debug('Start command', { chat: ctx.chat, from: ctx.from });
+            const chatType = this.checkIsAdmin(ctx.from.username as string) ? ChatType.MEMBER : ChatType.USER;
             await this.database.pushChat(ctx.chat.id, chatType);
             return ctx.reply(helpText, { parse_mode: 'HTML' });
         });
