@@ -27,7 +27,7 @@ export class Bot {
         );
         const wizardState = context.wizard.state as ReportSceneState;
         wizardState.data = {
-            who: (context.chat as any).username,
+            who: context.from?.username as string,
             where: '',
             what: ''
         };
